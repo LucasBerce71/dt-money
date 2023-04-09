@@ -59,7 +59,7 @@ export const Content = styled(Dialog.Content)`
 
             margin-top: 1.5rem;
 
-            background-color: ${props => props.theme["green-500"]};
+            background-color: ${props => props.theme["blue-500"]};
             color: ${props => props.theme.white};
 
             font-weight: bold;
@@ -69,7 +69,7 @@ export const Content = styled(Dialog.Content)`
             cursor: pointer;
 
             &:hover {
-                background-color: ${props => props.theme["green-700"]};
+                background-color: ${props => props.theme["blue-700"]};
                 
                 transition: background-color 0.2s;
             };

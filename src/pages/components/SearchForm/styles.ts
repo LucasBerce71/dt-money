@@ -26,22 +26,22 @@ export const SearchFormContainer = styled.form`
        align-items: center;
        gap: 0.75rem;
 
-       border: 1px solid ${props => props.theme["green-300"]};
+       border: 1px solid ${props => props.theme["blue-300"]};
        border-radius: 6px;
 
        padding: 1rem;
 
        background: transparent;
-       color: ${props => props.theme["green-300"]};
+       color: ${props => props.theme["blue-300"]};
 
        font-weight: bold;
 
        cursor: pointer;
 
        &:hover {
-        background: ${props => props.theme["green-500"]};
+        background: ${props => props.theme["blue-500"]};
 
-        border-color: ${props => props.theme["green-500"]};
+        border-color: ${props => props.theme["blue-500"]};
 
         color: ${props => props.theme.white};
 

@@ -10,9 +10,9 @@ export const defaultTheme = {
     'gray-800': '#202024',
     'gray-900': '#121214',
 
-    'green-300': '#00B37E',
-    'green-500': '#00875F',
-    'green-700': '#015F43',
+    'blue-300': '#00BFFF',
+    'blue-500': '#6495ED',
+    'blue-700': '#4682B4',
 
     'red-300': '#F75A68',
     'red-500': '#AB222E',
