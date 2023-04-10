@@ -1,8 +1,12 @@
-import * as Dialog from "@radix-ui/react-dialog";
+import { useContext } from "react";
+
 import { X, ArrowCircleUp, ArrowCircleDown } from "phosphor-react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import * as Dialog from "@radix-ui/react-dialog";
 import * as z from "zod";
+
+import { TransactionsContext } from "../../contexts/TransactionsContext";
 
 import * as S from "./styles";
 
@@ -21,6 +25,7 @@ export function NewTransactionModal() {
         register,
         handleSubmit,
         formState: { isSubmitting },
+        reset,
     } = useForm<NewTransactionFormInputs>({
         resolver: zodResolver(newTransactionFormSchema),
         defaultValues: {
@@ -28,10 +33,19 @@ export function NewTransactionModal() {
         },
     });
 
-    async function handleCreateNewTransaction(data: NewTransactionFormInputs) {
-        await new Promise(resolve => setTimeout(resolve, 2000));
+    const { createTransaction } = useContext(TransactionsContext);
 
-        console.log(data);
+    async function handleCreateNewTransaction(data: NewTransactionFormInputs) {
+        const { description, category, price, type } = data;
+
+        await createTransaction({ 
+            description, 
+            category, 
+            price, 
+            type 
+        });
+
+        reset();
     };
 
     return (
@@ -45,7 +59,7 @@ export function NewTransactionModal() {
                     <X size={24} />
                 </S.CloseButton>
 
-                <form action="" onSubmit={handleSubmit(handleCreateNewTransaction)}>
+                <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
                     <input
                         type="text"
                         placeholder="Descrição"
@@ -72,8 +86,8 @@ export function NewTransactionModal() {
                         name="type"
                         render={({ field }) => {
                             return (
-                                <S.TransactionType 
-                                    onValueChange={field.onChange} 
+                                <S.TransactionType
+                                    onValueChange={field.onChange}
                                     value={field.value}
                                 >
                                     <S.TransactionTypeButton value="income" variant="income">

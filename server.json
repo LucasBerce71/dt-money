@@ -1,28 +1,20 @@
 {
-    "transactions": [
-        {
-            "id": 1,
-            "description": "Desenvolvimento de site",
-            "type": "income",
-            "category": "Venda",
-            "price": 14000,
-            "createdAt": "2023-04-09T16:12:34.554Z"
-        },
-        {
-            "id": 2,
-            "description": "Hamburger",
-            "type": "outcome",
-            "category": "Alimentação",
-            "price": 50,
-            "createdAt": "2023-04-09T16:14:34.554Z"
-        },
-        {
-            "id": 3,
-            "description": "Ignite Rocketseat",
-            "type": "outcome",
-            "category": "Educação",
-            "price": 1980,
-            "createdAt": "2023-04-09T16:14:34.554Z"
-        }
-    ]
+  "transactions": [
+    {
+      "description": "Coca Cola",
+      "price": 7,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2023-04-09T22:20:51.043Z",
+      "id": 1
+    },
+    {
+      "description": "Desenvolvimento Chronus Sports",
+      "price": 5000,
+      "category": "Freela",
+      "type": "income",
+      "createdAt": "2023-04-09T22:21:22.517Z",
+      "id": 2
+    }
+  ]
 }
